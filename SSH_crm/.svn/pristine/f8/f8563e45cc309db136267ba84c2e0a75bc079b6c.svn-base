@@ -1,0 +1,5 @@
+package com.zzz.crm.customer.entity;
+
+
+public class Customer {
+}

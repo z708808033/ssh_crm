@@ -1,0 +1,63 @@
+package com.zzz.crm.customer.dao;
+
+import java.util.List;
+
+import com.zzz.crm.customer.entity.Customer;
+
+public interface CustomerDao {
+
+	/**
+	 * 添加客户
+	 * @param customer
+	 */
+	public void add(Customer customer);
+
+	/**
+	 * 按客户名称查找单个客户
+	 * @param custName
+	 * @return
+	 */
+	public Customer findCustomerByCustName(String custName);
+
+	/**
+	 * 查询所有客户
+	 * @return
+	 */
+	public List<Customer> findAllCustomer();
+
+	/**
+	 * 根据客户id查询客户
+	 * @param cid
+	 * @return
+	 */
+	public Customer findCustomerByCid(Integer cid);
+
+	/**
+	 * 编辑客户
+	 * @param customer
+	 */
+	public void update(Customer customer);
+
+	/**
+	 * 删除客户
+	 * @param integer
+	 */
+	public void delete(Integer cid);
+
+	/**
+	 * 查询总记录数
+	 * @return
+	 */
+	public int findTotalCount(String cname);
+
+	/**
+	 * 查询分页的客户列表
+	 * @param cname 
+	 * @param begin
+	 * @param pageSize
+	 * @return
+	 */
+	public List<Customer> findCustomerPageList(String cname, int begin, int pageSize);
+
+
+}

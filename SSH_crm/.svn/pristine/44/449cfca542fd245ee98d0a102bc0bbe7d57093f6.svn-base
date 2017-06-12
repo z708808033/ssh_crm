@@ -1,0 +1,8 @@
+package com.zzz.crm.user.dao;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+
+public class UserDaoMysqlImpl extends HibernateDaoSupport implements UserDao{
+	
+}

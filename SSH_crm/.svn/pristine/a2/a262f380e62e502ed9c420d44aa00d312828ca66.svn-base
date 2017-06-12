@@ -1,0 +1,25 @@
+package com.zzz.crm.user.dao;
+
+import java.util.List;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+
+import com.zzz.crm.user.entity.User;
+
+public class UserDaoMysqlImpl extends HibernateDaoSupport implements UserDao{
+
+	/**
+	 * 根据用户名查询用户
+	 */
+	public User findByUsername(String username) {
+		HibernateTemplate template = this.getHibernateTemplate();
+		List<User> list = (List<User>) template.find("from User where username=?", username);
+		if(list.size() == 0) {
+			return null;
+		}
+		User user = list.get(0);
+		return user;
+	}
+	
+}

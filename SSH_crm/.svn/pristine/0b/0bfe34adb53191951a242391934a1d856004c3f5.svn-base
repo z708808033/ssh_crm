@@ -1,0 +1,15 @@
+package com.zzz.crm.user.service;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import com.zzz.crm.user.dao.UserDao;
+
+@Transactional
+public class UserService {
+	private UserDao userDao;
+
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
+	
+}

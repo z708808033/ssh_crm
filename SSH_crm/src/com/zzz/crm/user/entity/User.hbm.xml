@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zzz.crm.user.entity.User" table="t_user">
+		<id name="uid">
+			<generator class="native"></generator>
+		</id>
+		<property name="username"></property>
+		<property name="password"></property>
+		
+		<set name="userVisitSet" inverse="true" cascade="delete,save-update">
+			<key column="uid"></key>
+			<one-to-many class="com.zzz.crm.visit.entity.Visit"/>
+		</set>
+	</class>
+</hibernate-mapping>

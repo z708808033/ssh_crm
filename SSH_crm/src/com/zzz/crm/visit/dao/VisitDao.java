@@ -1,0 +1,41 @@
+package com.zzz.crm.visit.dao;
+
+import java.util.List;
+
+import com.zzz.crm.visit.entity.Visit;
+
+public interface VisitDao {
+
+	/**
+	 * 添加功能
+	 * @param visit
+	 */
+	public void add(Visit visit);
+
+	/**
+	 * 查询所有拜访记录
+	 * @return
+	 */
+	public List<Visit> findAllVisit();
+
+	/**
+	 * 根据vid查询拜访
+	 * @param vid
+	 * @return
+	 */
+	public Visit findVisitByVid(Integer vid);
+
+	/**
+	 * 修改拜访
+	 * @param visit
+	 */
+	public void update(Visit visit);
+	
+	/**
+	 * 多条件查询
+	 * @param visit
+	 * @return
+	 */
+	public List<Visit> findByCondition(Visit visit);
+
+}

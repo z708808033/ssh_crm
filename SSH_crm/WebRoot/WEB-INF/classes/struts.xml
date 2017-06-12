@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 设置上传文件大小限制 -->
+	<constant name="struts.multipart.maxSize" value="1048576"></constant>
+
+	<package name="user" extends="struts-default" namespace="/">
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="loginSuccess" type="redirect">/index.jsp</result>
+			<result name="loginFail">/jsps/user/login.jsp</result>
+		</action>
+	</package>
+	<package name="customer" extends="struts-default" namespace="/">
+		<action name="customerAction_*" class="customerAction" method="{1}">
+			<result name="add">/jsps/customer/add.jsp</result>
+			<result name="addCustomerSuccess">/jsps/customer/msg.jsp</result>
+			<result name="addCustomerFail">/jsps/customer/add.jsp</result>
+			<result name="customerList">/jsps/customer/list.jsp</result>
+			<result name="editCustomer">/jsps/customer/desc.jsp</result>
+			<result name="editSuccess" type="redirectAction">customerAction_findAllCustomer</result>
+			<result name="deleteSuccess" type="redirectAction">customerAction_findAllCustomer</result>
+			<result name="listPage">/jsps/customer/listPage.jsp</result>
+			<result name="countLevel">/jsps/customer/countLevel.jsp</result>
+			<result name="countSource">/jsps/customer/countSource.jsp</result>
+		</action>
+	</package>
+	<package name="linkman" extends="struts-default" namespace="/">
+		<action name="linkmanAction_*" class="linkmanAction" method="{1}">
+			<result name="add">/jsps/linkman/add.jsp</result>
+			<result name="addSuccess">/jsps/linkman/msg.jsp</result>
+			<result name="list">/jsps/linkman/list.jsp</result>
+			<result name="list2">/jsps/linkman/list2.jsp</result>
+			<result name="edit">/jsps/linkman/desc.jsp</result>
+			<result name="editSuccess" type="redirectAction">linkmanAction_findLinkman</result>
+			<result name="input">/jsps/error.jsp</result>
+			<result name="conditionPage">/jsps/condition/linkman.jsp</result>
+		</action>
+	</package>
+	<package name="visit" extends="struts-default" namespace="/">
+		<action name="visitAction_*" class="visitAction" method="{1}">
+			<result name="add">/jsps/visit/add.jsp</result>
+			<result name="addSuccess" type="redirectAction">visitAction_findAllVisit</result>
+			<result name="list">/jsps/visit/list.jsp</result>
+			<result name="edit">/jsps/visit/desc.jsp</result>
+			<result name="editSuccess" type="redirectAction">visitAction_findAllVisit</result>
+			<result name="conditionPage">/jsps/condition/visit.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,17 @@
+package com.zzz.crm.user.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.zzz.crm.user.service.UserService;
+
+public class UserAction extends ActionSupport{
+	private UserService userService;
+	
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
+	public String login() throws Exception {
+		
+		return NONE;
+	}
+}
